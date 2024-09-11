@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #3a3535;
+}
+
+#frame {
+  margin: 20px auto;
+  width: 1000px;
+  max-width: 100%;
+  text-align: center;
+}
+
+#frame input[type="radio"] {
+  display: none;
+}
+
+#frame label {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+main#carousel {
+  padding: 10px;
+  border: 5px solid #0f0;
+  position: relative;
+  z-index: 1;
+}
+
+#overflow {
+  width: 100%;
+  overflow: hidden;
+}
+
+#frame1:checked ~ #carousel .inner {
+  margin-left: 0;
+}
+
+#frame2:checked ~ #carousel .inner {
+  margin-left: -100%;
+}
+
+img {
+  height: 80vh;
+}
