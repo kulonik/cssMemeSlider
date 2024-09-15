@@ -5,10 +5,9 @@ body {
 }
 
 #frame {
-  margin: 0 auto;
+  margin: 50px auto 0;
   width: 1000px;
   max-width: 100%;
-  /* text-align: center; */
   display: flex;
   flex-direction: column-reverse;
 }
@@ -24,7 +23,6 @@ body {
 
 main#carousel {
   padding: 10px;
-  /* border: 5px solid #0f0; */
   position: relative;
   z-index: 1;
 }
@@ -68,26 +66,6 @@ main#carousel {
   color: #fff;
 }
 
-#controls {
-  margin: -110px 0 0 0;
-  width: 100%;
-  height: 30px;
-  z-index: 3;
-  position: relative;
-}
-
-#controls label {
-  transition: opacity 0.2s ease-out;
-  display: none;
-  width: 50px;
-  height: 50px;
-  opacity: 0.4;
-}
-
-#controls label:hover {
-  opacity: 1;
-}
-
 #frame1:checked ~ #controls label:nth-child(2),
 #frame2:checked ~ #controls label:nth-child(3),
 #frame3:checked ~ #controls label:nth-child(4),
@@ -109,7 +87,9 @@ main#carousel {
 }
 
 #bullets {
-  margin: -110px 0 0;
+  align-self: flex-end;
+  width: 45%;
+  margin: -50px 0 0;
   text-align: right;
   z-index: 4;
 }
@@ -131,7 +111,21 @@ main#carousel {
   border: 2px solid #4190ff;
 }
 
+#bullets label:hover {
+  background: #fff;
+  border: 2px solid #fff;
+}
+
+#frame1:checked:hover ~ #bullets label:nth-child(1),
+#frame2:checked:hover ~ #bullets label:nth-child(2),
+#frame3:checked:hover ~ #bullets label:nth-child(3),
+#frame4:checked:hover ~ #bullets label:nth-child(4) {
+  background: #3a3535;
+  border: 2px solid #fff;
+}
+
 .frame-content h2 {
+  display: block;
   text-align: left;
   font-family: sans-serif;
   font-weight: 300;
@@ -141,4 +135,46 @@ img {
   height: 70vh;
   border-radius: 10px;
   margin-bottom: 20px;
+}
+
+.carousel-content {
+  list-style-type: none;
+}
+
+.carousel-content,
+.carousel-content::after {
+  /* top: 550px; */
+  position: relative;
+  width: 45%;
+  height: 30px;
+  left: 0px;
+  z-index: 3;
+  padding-left: 0;
+  margin-left: 10px;
+  margin-top: -100px;
+}
+
+.carousel-content li span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  animation-name: desc;
+  animation-duration: 4s;
+}
+
+#text2:checked ~ .carousel-content {
+  animation-delay: 2s;
+}
+
+#text3:checked ~ .carousel-content {
+  animation-delay: 4s;
+}
+@keyframes desc {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
