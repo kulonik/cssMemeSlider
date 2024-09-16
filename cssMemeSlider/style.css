@@ -141,8 +141,7 @@ img {
   list-style-type: none;
 }
 
-.carousel-content,
-.carousel-content::after {
+.carousel-content {
   /* top: 550px; */
   position: relative;
   width: 45%;
@@ -159,22 +158,13 @@ img {
   width: 100%;
   height: 100%;
   color: #fff;
-  animation-name: desc;
-  animation-duration: 4s;
+  opacity: 0;
 }
 
-#text2:checked ~ .carousel-content {
-  animation-delay: 2s;
-}
-
-#text3:checked ~ .carousel-content {
-  animation-delay: 4s;
-}
-@keyframes desc {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+#frame1:checked ~ ul > li > #text1,
+#frame2:checked ~ ul > li > #text2,
+#frame3:checked ~ ul > li > #text3,
+#frame4:checked ~ ul > li > #text4 {
+  opacity: 1;
+  transition: opacity 1s ease;
 }
