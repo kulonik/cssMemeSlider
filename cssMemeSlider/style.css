@@ -171,7 +171,23 @@ img {
 }
 
 @media screen and (max-width: 550px) {
-  .frame {
+  #frame {
+    height: 100vh;
     display: grid;
+    grid-template-areas: "A" "B" "C";
+  }
+
+  #bullets {
+    grid-area: B;
+    margin: 0 auto;
+  }
+
+  .carousel-content {
+    grid-area: C;
+  }
+
+  #carousel {
+    width: 96vw;
+    grid-area: A;
   }
 }
