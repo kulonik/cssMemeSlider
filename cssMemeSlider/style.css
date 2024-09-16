@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #3a3535;
+}
+
+#frame {
+  margin: 50px auto 0;
+  width: 1000px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#frame input[type="radio"] {
+  display: none;
+}
+
+#frame label {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+main#carousel {
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+#overflow {
+  width: 100%;
+  overflow: hidden;
+}
+
+#frame1:checked ~ #carousel .inner {
+  margin-left: 0;
+}
+
+#frame2:checked ~ #carousel .inner {
+  margin-left: -100%;
+}
+
+#frame3:checked ~ #carousel .inner {
+  margin-left: -200%;
+}
+
+#frame4:checked ~ #carousel .inner {
+  margin-left: -300%;
+}
+
+#carousel .inner {
+  transition: margin-left 800ms cubic-bezier(0.77, 0, 0.175, 1);
+  width: 400%;
+  line-height: 0;
+  height: 90vh;
+}
+
+#carousel .frame {
+  width: 25%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 100%;
+  color: #fff;
+}
+
+#frame1:checked ~ #controls label:nth-child(2),
+#frame2:checked ~ #controls label:nth-child(3),
+#frame3:checked ~ #controls label:nth-child(4),
+#frame4:checked ~ #controls label:nth-child(1) {
+  background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
+  float: right;
+  margin: 0 -50px 0 0;
+  display: block;
+}
+
+#frame1:checked ~ #controls label:nth-last-child(2),
+#frame2:checked ~ #controls label:nth-last-child(3),
+#frame3:checked ~ #controls label:nth-last-child(4),
+#frame4:checked ~ #controls label:nth-last-child(1) {
+  background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
+  float: left;
+  margin: 0 0 0 -50px;
+  display: block;
+}
+
+#bullets {
+  align-self: flex-end;
+  width: 45%;
+  margin: -50px 0 0;
+  text-align: right;
+  z-index: 4;
+}
+
+#bullets label {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background: #4190ff;
+  border: 2px solid #4190ff;
+  margin: 0 10px;
+}
+#frame1:checked ~ #bullets label:nth-child(1),
+#frame2:checked ~ #bullets label:nth-child(2),
+#frame3:checked ~ #bullets label:nth-child(3),
+#frame4:checked ~ #bullets label:nth-child(4) {
+  background: #3a3535;
+  border: 2px solid #4190ff;
+}
+
+#bullets label:hover {
+  background: #fff;
+  border: 2px solid #fff;
+}
+
+#frame1:checked:hover ~ #bullets label:nth-child(1),
+#frame2:checked:hover ~ #bullets label:nth-child(2),
+#frame3:checked:hover ~ #bullets label:nth-child(3),
+#frame4:checked:hover ~ #bullets label:nth-child(4) {
+  background: #3a3535;
+  border: 2px solid #fff;
+}
+
+.frame-content h2 {
+  display: block;
+  text-align: left;
+  font-family: sans-serif;
+  font-weight: 300;
+}
+
+img {
+  height: 70vh;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.carousel-content {
+  list-style-type: none;
+}
+
+.carousel-content {
+  /* top: 550px; */
+  position: relative;
+  width: 45%;
+  height: 30px;
+  left: 0px;
+  z-index: 3;
+  padding-left: 0;
+  margin-left: 10px;
+  margin-top: -100px;
+}
+
+.carousel-content li span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #c7e9f5;
+  opacity: 0;
+  font-size: 1.5em;
+}
+
+#frame1:checked ~ ul > li > #text1,
+#frame2:checked ~ ul > li > #text2,
+#frame3:checked ~ ul > li > #text3,
+#frame4:checked ~ ul > li > #text4 {
+  opacity: 1;
+  transition: opacity 4s ease;
+}
+
+@media screen and (max-width: 550px) {
+  #frame {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "A" "B" "C";
+  }
+
+  #bullets {
+    grid-area: B;
+    margin: 0 auto;
+  }
+
+  .carousel-content {
+    grid-area: C;
+  }
+
+  #carousel {
+    width: 96vw;
+    grid-area: A;
+  }
+}

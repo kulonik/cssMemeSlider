@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>CSS Meme Slider</title>
+</head>
+
+<body>
+  <div id="frame">
+    <input type="radio" name="frame" id="frame1" checked="checked">
+    <label for="frame1"></label>
+    <input type="radio" name="frame" id="frame2">
+    <label for="frame2"></label>
+    <input type="radio" name="frame" id="frame3">
+    <label for="frame3"></label>
+    <input type="radio" name="frame" id="frame4">
+    <label for="frame4"></label>
+    <div id="bullets">
+      <label for="frame1" class="bullets"></label>
+      <label for="frame2" class="bullets"></label>
+      <label for="frame3" class="bullets"></label>
+      <label for="frame4" class="bullets"></label>
+    </div>
+    <ul class="carousel-content">
+      <li><span id="text1">City of my dream</span></li>
+      <li><span id="text2">City of my big dream</span></li>
+      <li><span id="text3">City I was dreaming about last year</span></li>
+      <li><span id="text4">The only city I have been</span></li>
+    </ul>
+    <main id="carousel">
+      <div id="overflow">
+        <div class="inner">
+          <div class="frame frame_1">
+            <img src="./assets/florence.png" alt="Florence">
+            <!-- <div class="frame-content">
+              <h2>Town of my dream</h2>
+            </div> -->
+          </div>
+          <div class="frame frame_2">
+            <img src="./assets/montenegro.png" alt="Montenegro">
+            <!-- <div class="frame-content">
+              <h2>Town of my big dream</h2>
+            </div> -->
+          </div>
+          <div class="frame frame_3">
+            <img src="./assets/georgia.png " alt="Georgia">
+            <!-- <div class="frame-content">
+              <h2>The city I was dreaming about last year</h2>
+            </div> -->
+          </div>
+          <div class="frame frame_4">
+            <img src="./assets/izmir.png" alt="Izmir">
+            <!-- <div class="frame-content">
+              <h2>The only city I have been</h2>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
